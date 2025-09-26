@@ -13,9 +13,9 @@ const WorkerSchema = new mongoose.Schema({
     unique: true,
     maxLength: 100,
   },
-  employeeId: { type: Number, required: true },
+  employeeId: { type: Number },
   role: { type: String, enum: ["admin", "worker"], default: "worker" },
-  isActive: { type: Boolean, required: true },
+  isActive: { type: Boolean, default: true },
   password: { type: String, required: true },
 });
 module.exports = mongoose.model("Workers", WorkerSchema);

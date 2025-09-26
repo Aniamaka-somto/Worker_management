@@ -1,4 +1,3 @@
-const { get } = require("mongoose");
 const worker = require("../models/worker");
 
 const getAllWorkers = async (req, res) => {
