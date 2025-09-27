@@ -45,7 +45,7 @@ const Register = async (req, res) => {
 // login controller
 const Login = async (req, res) => {
   try {
-    const { email, password } = req.body;
+    const { email, password, role } = req.body;
     const findWorker = await worker.findOne({ email });
     if (!findWorker) {
       res.status(400).json("user does not exist");
@@ -65,7 +65,7 @@ const Login = async (req, res) => {
       },
       process.env.JWT_SECRET_KEY,
       {
-        expiresIn: "10m",
+        expiresIn: "5m",
       }
     );
     res.status(200).json({
